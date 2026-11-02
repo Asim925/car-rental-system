@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My bookings — Veloce Car Rental</title>
+  <meta name="description" content="View, manage and cancel your Veloce rentals, and keep your driver profile up to date.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏁</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="bookings">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="siteHeader"></header>
+
+  <main id="main">
+    <section class="page-head on-dark">
+      <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a> <span>/</span> <span style="color:#c8d5ea">My bookings</span>
+        </nav>
+        <h1>My bookings</h1>
+        <p>Upcoming trips, rental history and your driver details — all stored in this browser.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container stack" style="gap:30px">
+        <!-- guard message if the visitor is not signed in -->
+        <div id="guardRoot"></div>
+
+        <div id="accountRoot" class="hidden">
+          <!-- ---------- PROFILE ---------- -->
+          <div id="profile" class="profile-card reveal"></div>
+
+          <!-- ---------- TABS + LIST ---------- -->
+          <div class="mt-4">
+            <div class="flex-between wrap" style="margin-bottom:20px">
+              <div class="pill-group" id="statusTabs"></div>
+              <div class="flex" style="gap:10px">
+                <button class="btn btn--outline btn--sm" id="refreshBtn"><span class="ico"></span> Refresh</button>
+                <a class="btn btn--sm" href="browse.html">Book another car</a>
+              </div>
+            </div>
+            <div class="stack" id="bookingsList" style="gap:20px"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="siteFooter"></footer>
+
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/bookings.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Booking — Veloce Car Rental</title>
+  <meta name="description" content="Confirm your Veloce rental: choose dates, driver details and extras, then get an instant booking reference.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏁</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="booking">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="siteHeader"></header>
+
+  <main id="main">
+    <section class="page-head on-dark">
+      <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a> <span>/</span> <a href="browse.html">Cars</a> <span>/</span>
+          <span style="color:#c8d5ea">Booking</span>
+        </nav>
+        <h1>Complete your booking</h1>
+        <p>Three short steps. The total updates as you go — what you see is what you pay.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <!-- anything wrong (no car / no login) is injected here -->
+        <div id="guardRoot"></div>
+
+        <div id="bookingFlow" class="hidden">
+          <!-- step indicator -->
+          <div class="flow-steps" id="flowSteps">
+            <div class="flow-step active" data-step="1"><span class="dot">1</span><span>Trip details</span></div>
+            <div class="flow-step" data-step="2"><span class="dot">2</span><span>Driver</span></div>
+            <div class="flow-step" data-step="3"><span class="dot">3</span><span>Extras &amp; review</span></div>
+          </div>
+
+          <div class="booking-layout">
+            <!-- ============ LEFT : the form ============ -->
+            <form id="bookingForm" novalidate>
+              <!-- ---- STEP 1 ---- -->
+              <div class="panel form-step active" data-step="1">
+                <h2 class="h-md">When and where?</h2>
+                <p class="muted small mt-1">Availability is re-checked before you can confirm.</p>
+                <div class="form-grid mt-3">
+                  <div class="field span-2">
+                    <label class="label" for="location">Pick-up point</label>
+                    <select class="select" id="location"></select>
+                  </div>
+                  <div class="field">
+                    <label class="label" for="pickupDate">Pick-up date</label>
+                    <input class="input" type="date" id="pickupDate" required>
+                    <span class="field-error">Required</span>
+                  </div>
+                  <div class="field">
+                    <label class="label" for="returnDate">Return date</label>
+                    <input class="input" type="date" id="returnDate" required>
+                    <span class="field-error">Required</span>
+                  </div>
+                  <div class="field">
+                    <label class="label" for="pickupTime">Pick-up time</label>
+                    <select class="select" id="pickupTime"></select>
+                  </div>
+                  <div class="field">
+                    <label class="label" for="returnTime">Return time</label>
+                    <select class="select" id="returnTime"></select>
+                  </div>
+                </div>
+                <div id="step1Error" class="mt-2"></div>
+                <div class="flex mt-3" style="justify-content:flex-end">
+                  <button type="button" class="btn btn--dark btn--lg" id="toStep2">Continue <span class="ico"></span></button>
+                </div>
+              </div>
+
+              <!-- ---- STEP 2 ---- -->
+              <div class="panel form-step" data-step="2">
+                <h2 class="h-md">Who is driving?</h2>
+                <p class="muted small mt-1">Must match the licence shown at pick-up.</p>
+                <div class="form-grid mt-3">
+                  <div class="field span-2">
+                    <label class="label" for="fullName">Full name</label>
+                    <input class="input" id="fullName" type="text" placeholder="Alex Morgan" autocomplete="name">
+                    <span class="field-error">Please enter your full name</span>
+                  </div>
+                  <div class="field">
+                    <label class="label" for="email">Email</label>
+                    <input class="input" id="email" type="email" placeholder="alex@email.com" autocomplete="email">
+                    <span class="field-error">Enter a valid email address</span>
+                  </div>
+                  <div class="field">
+                    <label class="label" for="phone">Phone</label>
+                    <input class="input" id="phone" type="tel" placeholder="+1 555 0100" autocomplete="tel">
+                    <span class="field-error">Enter a reachable phone number</span>
+                  </div>
+                  <div class="field">
+                    <label class="label" for="license">Driving licence number</label>
+                    <input class="input" id="license" type="text" placeholder="D-1234567">
+                    <span class="field-error">Licence number is required</span>
+                  </div>
+                  <div class="field">
+                    <label class="label" for="ageBand">Driver age</label>
+                    <select class="select" id="ageBand">
+                      <option value="25+">25 or older</option>
+                      <option value="21-24">21 – 24 (young driver fee)</option>
+                    </select>
+                    <span class="hint">Drivers under 25 pay a one-off $45 fee.</span>
+                  </div>
+                  <div class="field span-2">
+                    <label class="label" for="notes">Notes for the desk <span class="muted">(optional)</span></label>
+                    <textarea class="textarea" id="notes" placeholder="Child seat, late arrival, flight number…"></textarea>
+                  </div>
+                </div>
+                <div class="flex mt-3" style="justify-content:space-between">
+                  <button type="button" class="btn btn--outline" data-back="1"><span class="ico-back"></span> Back</button>
+                  <button type="button" class="btn btn--dark btn--lg" id="toStep3">Review booking <span class="ico"></span></button>
+                </div>
+              </div>
+
+              <!-- ---- STEP 3 ---- -->
+              <div class="panel form-step" data-step="3">
+                <h2 class="h-md">Extras &amp; review</h2>
+                <p class="muted small mt-1">All optional. Nothing here is added unless you switch it on.</p>
+
+                <div class="stack mt-3" id="extras"></div>
+
+                <div class="field mt-2 hidden" id="deliveryWrap">
+                  <label class="label" for="deliveryAddress">Delivery address</label>
+                  <input class="input" id="deliveryAddress" type="text" placeholder="Street, building, apartment">
+                  <span class="field-error">We need an address to deliver the car</span>
+                </div>
+
+                <hr class="divider">
+                <h3 class="h-sm">Review</h3>
+                <div class="mt-2" id="reviewList"></div>
+
+                <label class="check mt-3" style="align-items:flex-start">
+                  <input type="checkbox" id="terms">
+                  <span class="box"></span>
+                  <span style="font-weight:600;color:var(--ink-soft)">I accept the rental terms, the fuel policy and the cancellation rules.
+                    <span class="field-error" id="termsError" style="display:none">You must accept the terms</span></span>
+                  </label>
+
+                <div id="step3Error" class="mt-2"></div>
+
+                <div class="flex mt-3" style="justify-content:space-between">
+                  <button type="button" class="btn btn--outline" data-back="2"><span class="ico-back"></span> Back</button>
+                  <button type="submit" class="btn btn--lg" id="confirmBtn">Confirm booking <span class="ico"></span></button>
+                </div>
+              </div>
+            </form>
+
+            <!-- ============ RIGHT : live summary ============ -->
+            <aside>
+              <div class="summary-card">
+                <div class="summary-car">
+                  <img id="sumImg" src="" alt="">
+                  <div class="sc-text"><span id="sumBrand"></span><b id="sumName"></b></div>
+                </div>
+                <div class="summary-body">
+                  <div class="summary-row"><span>Pick-up</span><b id="sumPickup">—</b></div>
+                  <div class="summary-row"><span>Return</span><b id="sumReturn">—</b></div>
+                  <div class="summary-row"><span>Duration</span><b id="sumDays">—</b></div>
+                  <div class="summary-row"><span>Location</span><b id="sumLocation">—</b></div>
+                  <hr class="divider" style="margin:14px 0;border-color:rgba(255,255,255,.1)">
+                  <div id="sumRows"></div>
+                  <div class="summary-row total"><span>Total due at pick-up</span><b id="sumTotal">$0</b></div>
+                  <div class="summary-note">
+                    <span id="noteIcon"></span>
+                    <span>Free cancellation up to 24 hours before pick-up. A refundable deposit of $250 is held on your card at collection.</span>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <!-- ============ SUCCESS SCREEN ============ -->
+        <div id="successRoot" class="hidden"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="siteFooter"></footer>
+
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>

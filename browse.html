@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Browse the fleet — Veloce Car Rental</title>
+  <meta name="description" content="Search, filter and sort the whole Veloce fleet by brand, category, seats and price per day.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏁</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="browse">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="siteHeader"></header>
+
+  <main id="main">
+    <!-- ============ PAGE HEAD ============ -->
+    <section class="page-head on-dark">
+      <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a> <span>/</span> <span style="color:#c8d5ea">Browse cars</span>
+        </nav>
+        <h1>Find your car.</h1>
+        <p>Every listing shows the real spec and the real daily rate. Filter it down, then check availability for your dates instantly.</p>
+        <div class="mt-3" id="rentalBanner"></div>
+      </div>
+    </section>
+
+    <!-- ============ BROWSE ============ -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="browse-layout">
+
+          <!-- ---------- FILTER SIDEBAR ---------- -->
+          <aside class="filters" aria-label="Filters">
+            <div class="flex-between" style="margin-bottom:6px">
+              <h2 class="h-sm flex" style="gap:9px"><span id="filterIcon"></span> Filters</h2>
+              <button type="button" class="tiny upper" id="clearAll" style="color:var(--blue-600);font-weight:800">Clear all</button>
+            </div>
+
+            <div class="filter-group">
+              <label class="filter-title" for="searchInput">Search</label>
+              <div class="search-box">
+                <span id="searchIcon"></span>
+                <input class="input" id="searchInput" type="search" placeholder="Car or brand, e.g. BMW">
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <p class="filter-title">Category</p>
+              <div class="pill-group" id="categoryPills"></div>
+            </div>
+
+            <div class="filter-group">
+              <p class="filter-title">Brand</p>
+              <div class="stack" id="brandChecks" style="gap:2px"></div>
+            </div>
+
+            <div class="filter-group">
+              <p class="filter-title">Price per day <span class="mono" id="priceLabel" style="color:var(--blue-600)"></span></p>
+              <label class="label" for="minPrice" style="font-size:.7rem">Minimum</label>
+              <input class="range" type="range" id="minPrice" step="10">
+              <label class="label mt-2" for="maxPrice" style="font-size:.7rem">Maximum</label>
+              <input class="range" type="range" id="maxPrice" step="10">
+            </div>
+
+            <div class="filter-group">
+              <p class="filter-title">Transmission</p>
+              <div class="pill-group" id="transPills"></div>
+            </div>
+
+            <div class="filter-group">
+              <p class="filter-title">Seats</p>
+              <div class="pill-group" id="seatPills"></div>
+            </div>
+
+            <div class="filter-group">
+              <p class="filter-title">Fuel</p>
+              <div class="pill-group" id="fuelPills"></div>
+            </div>
+
+            <a class="btn btn--outline btn--block mt-2" href="browse.html">Reset filters</a>
+          </aside>
+
+          <!-- ---------- RESULTS ---------- -->
+          <div>
+            <div class="results-bar">
+              <div class="results-count" id="resultsCount"></div>
+              <div class="flex" style="gap:10px">
+                <label class="label" for="sortSelect" style="white-space:nowrap">Sort by</label>
+                <select class="select" id="sortSelect" style="min-width:190px;padding-block:10px">
+                  <option value="featured">Featured first</option>
+                  <option value="price-asc">Price: low to high</option>
+                  <option value="price-desc">Price: high to low</option>
+                  <option value="rating">Best rated</option>
+                  <option value="name">Name A–Z</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="active-filters" id="activeFilters"></div>
+            <div class="car-grid" id="resultsGrid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="siteFooter"></footer>
+
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/browse.js"></script>
+</body>
+</html>
