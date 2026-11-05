@@ -1,202 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Veloce — Premium Car Rental | Drive something worth driving</title>
-  <meta name="description" content="Rent a curated fleet of sports cars, luxury saloons, SUVs and EVs. Instant quote, transparent pricing, pick-up in minutes.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏁</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Car Rental in Karachi | DriveEase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
-
-<body data-page="home">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header id="siteHeader"></header>
-
-  <main id="main">
-    <!-- ================= HERO ================= -->
-    <section class="hero on-dark">
-      <div class="container hero-inner">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Est. 2014 · 6 pick-up points · 16 cars</p>
-            <h1 class="hero-title">
-              Rent the car
-              <span class="outline">you keep</span>
-              <span class="accent">thinking about.</span>
-            </h1>
-            <p class="hero-lead">
-              No counter queues, no hidden insurance upsell. Pick your dates, see the exact
-              total before you pay, and collect a car that has actually been detailed.
-            </p>
-            <div class="hero-meta">
-              <div><b id="heroFleet">0</b><span>Cars in fleet</span></div>
-              <div><b id="heroRating">0</b><span>Average rating</span></div>
-              <div><b id="heroFrom">$0</b><span>Per day from</span></div>
-            </div>
-          </div>
-
-          <div class="hero-media">
-            <div class="frame">
-              <img id="heroImage" src="https://images.pexels.com/photos/11808155/pexels-photo-11808155.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1300" alt="Premium SUV in a dark studio">
-            </div>
-            <div class="float-card float-card--price">
-              <span id="cheapLabel">Best value</span>
-              <b id="cheapPrice">$59<small style="font-size:.7rem"> /day</small></b>
-            </div>
-            <div class="float-card float-card--rating">
-              <span class="stars">★★★★★</span>
-              <div><b id="topCarName">4.9 / 5</b><span id="topCarSub">1,842 verified reviews</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- brand marquee (filled by home.js) -->
-      <div class="marquee" aria-hidden="true"><div class="marquee-track" id="brandMarquee"></div></div>
-
-      <!-- quick booking bar -->
-      <div class="container hero-inner">
-        <form class="quick-book" id="quickBook" novalidate>
-          <div class="qb-head">
-            <div>
-              <p class="eyebrow">Start your rental</p>
-              <h2 class="h-sm" style="color:#fff;margin-top:8px">Where and when do you need it?</h2>
-            </div>
-            <p class="tiny upper" style="color:#8ba0c2">Free cancellation up to 24h before pick-up</p>
-          </div>
-          <div class="qb-grid">
-            <div class="field">
-              <label class="label" for="qbLocation">Pick-up point</label>
-              <select class="select" id="qbLocation"></select>
-            </div>
-            <div class="field">
-              <label class="label" for="qbPickup">Pick-up date</label>
-              <input class="input" type="date" id="qbPickup" required>
-            </div>
-            <div class="field">
-              <label class="label" for="qbReturn">Return date</label>
-              <input class="input" type="date" id="qbReturn" required>
-            </div>
-            <button class="btn btn--lg" type="submit">Find my car <span id="qbArrow"></span></button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- ================= STATS ================= -->
-    <section class="section section--tight" style="padding-top:104px">
-      <div class="container">
-        <div class="stats-strip reveal">
-          <div class="stat-box"><b data-count="16" id="statCars">0</b><span>Cars available</span></div>
-          <div class="stat-box"><b data-count="4200" data-suffix="+">0</b><span>Trips completed</span></div>
-          <div class="stat-box"><b data-count="6">0</b><span>Pick-up points</span></div>
-          <div class="stat-box"><b data-count="24" data-suffix="/7">0</b><span>Roadside support</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= FEATURED ================= -->
-    <section class="section section--tight" id="featured">
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="head-text">
-            <p class="eyebrow">Hand-picked this month</p>
-            <h2 class="h-lg section-title">Featured keys</h2>
-            <p class="section-sub">Six cars our team would take home if the paperwork allowed it.</p>
-          </div>
-          <a class="link-arrow" href="browse.html">Browse the full fleet <span id="arr1"></span></a>
-        </div>
-        <div class="car-grid" id="featuredGrid"></div>
-      </div>
-    </section>
-
-    <!-- ================= CATEGORIES (bento) ================= -->
-    <section class="section section--dark on-dark" id="categories">
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="head-text">
-            <p class="eyebrow">Choose your character</p>
-            <h2 class="h-lg section-title">Six ways to leave</h2>
-            <p class="section-sub" style="color:#a9bbd8">Filter the fleet by what the trip actually is.</p>
-          </div>
-        </div>
-        <div class="bento" id="bentoGrid"></div>
-      </div>
-    </section>
-
-    <!-- ================= POPULAR RAIL ================= -->
-    <section class="section section--tight" id="popular">
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="head-text">
-            <p class="eyebrow">Most booked this week</p>
-            <h2 class="h-lg section-title">Popular right now</h2>
-          </div>
-          <div class="rail-nav">
-            <button type="button" id="railPrev" aria-label="Scroll left"></button>
-            <button type="button" id="railNext" aria-label="Scroll right"></button>
-          </div>
-        </div>
-        <div class="rail" id="popularRail"></div>
-      </div>
-    </section>
-
-    <!-- ================= HOW IT WORKS ================= -->
-    <section class="section section--tight" id="how" style="background:#fff;border-block:1px solid var(--line)">
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="head-text">
-            <p class="eyebrow">Four steps, about 90 seconds</p>
-            <h2 class="h-lg section-title">How Veloce works</h2>
-          </div>
-        </div>
-        <div class="steps-line" id="stepsLine"></div>
-      </div>
-    </section>
-
-    <!-- ================= TESTIMONIALS + WHY ================= -->
-    <section class="section section--dark on-dark" id="why">
-      <div class="container">
-          <div class="why-grid" id="whyGrid">
-          <div>
-            <p class="eyebrow reveal">What renters say</p>
-            <h2 class="h-lg section-title reveal">The reviews we<br>actually print.</h2>
-            <div class="mt-4" id="quoteBox"></div>
-            <div class="quote-dots" id="quoteDots"></div>
-          </div>
-          <div class="stack" id="perkList"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CTA ================= -->
-    <section class="section section--tight">
-      <div class="container">
-        <div class="cta-band reveal">
-          <img src="https://images.pexels.com/photos/108152/pexels-photo-108152.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="">
-          <div>
-            <p class="eyebrow" style="color:var(--blue-300)">Members save 8–18%</p>
-            <h2 class="h-md mt-1">Book a week, get the weekly rate automatically.</h2>
-            <p class="lead mt-2" style="color:#b9c7de">Every rental of 7+ days is discounted before you pay — no codes, no phone calls, no small print.</p>
-          </div>
-          <div class="cta-side">
-            <a class="btn btn--lg" href="browse.html">Browse cars <span id="arr2"></span></a>
-            <a class="btn btn--ghost btn--lg" href="auth.html?mode=signup">Create free account</a>
-            <p class="tiny" style="color:#8ba0c2">No card needed to reserve. Free cancellation up to 24h.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer id="siteFooter"></footer>
-
-  <script src="js/store.js"></script>
-  <script src="js/ui.js"></script>
-  <script src="js/home.js"></script>
+<body data-page="index">
+<header id="header"></header>
+<main>
+<section class="hero"><div class="wrap">
+  <h1>Rent a car in Karachi without the back-and-forth</h1>
+  <p class="lead">Compare 12 vehicles in one place, see the full price for your dates, and send a single request. Economy cars start at ₨2,500 a day.</p>
+  <div class="row"><a class="btn light" href="cars.html">Browse cars</a><a class="btn ghost" href="rent.html">Request a rental</a></div>
+</div></section>
+<div class="wrap">
+  <form class="quote" action="rent.html">
+    <label>Vehicle<select name="car" id="qCar"></select></label>
+    <label>Pickup date<input type="date" name="pickup" id="qP" required></label>
+    <label>Return date<input type="date" name="return" id="qR" required></label>
+    <button class="btn primary" type="submit">Check price</button>
+  </form>
+  <div class="stats"><div><b>12+</b><span>Vehicles</span></div><div><b>₨2.5K</b><span>From, per day</span></div><div><b>4</b><span>Categories</span></div><div><b>24/7</b><span>Support</span></div></div>
+</div>
+<section class="sec"><div class="wrap">
+  <div class="head"><div><h2>Browse by category</h2><p>Start with the kind of trip you have planned.</p></div></div>
+  <div class="grid g4">
+    <a class="card cat" href="cars.html?cat=Economy"><h3>Economy</h3><p>Small, efficient cars for the city.</p><b>From ₨2,500/day</b></a>
+    <a class="card cat" href="cars.html?cat=Sedan"><h3>Sedan</h3><p>Comfortable for family and business trips.</p><b>From ₨4,000/day</b></a>
+    <a class="card cat" href="cars.html?cat=SUV"><h3>SUV</h3><p>Room for seven, ready for long highways.</p><b>From ₨6,500/day</b></a>
+    <a class="card cat" href="cars.html?cat=Luxury"><h3>Luxury</h3><p>Premium cars for weddings and events.</p><b>From ₨15,000/day</b></a>
+  </div>
+</div></section>
+<section class="sec alt"><div class="wrap">
+  <div class="head"><div><h2>Featured vehicles</h2><p>Popular picks for your next trip.</p></div><a class="more" href="cars.html">View all vehicles</a></div>
+  <div class="grid" id="featured"></div>
+</div></section>
+<section class="sec"><div class="wrap">
+  <div class="head"><div><h2>Why rent with DriveEase</h2></div></div>
+  <div class="grid">
+    <div class="card"><h3>One place to compare</h3><p>No more calling several rental shops. Every car lists its seats, transmission and fuel type next to its daily rate.</p></div>
+    <div class="card"><h3>Clear pricing</h3><p>The calculator shows the daily rate, extras and discounts (5% from 3 days, 10% from 7 days) before you send a request.</p></div>
+    <div class="card"><h3>Optional extras</h3><p>Add a driver, child seat, GPS or full insurance to any rental, priced per day.</p></div>
+    <div class="card"><h3>Cars for every trip</h3><p>Economy hatchbacks, family sedans, seven-seat SUVs and luxury cars for weddings or business travel.</p></div>
+    <div class="card"><h3>Simple request form</h3><p>Send your details and dates once. We call to confirm availability and pickup.</p></div>
+    <div class="card"><h3>Support when you need it</h3><p>Reach us by phone or email, every day. See the contact page for hours.</p></div>
+  </div>
+</div></section>
+<section class="sec alt"><div class="wrap">
+  <div class="head"><div><h2>How it works</h2></div></div>
+  <div class="grid">
+    <div class="step"><b>1</b><h3>Browse cars</h3><p class="lead">Filter the fleet by category, transmission or daily budget.</p></div>
+    <div class="step"><b>2</b><h3>Estimate the cost</h3><p class="lead">Pick your dates and extras in the calculator for an instant total.</p></div>
+    <div class="step"><b>3</b><h3>Submit your request</h3><p class="lead">Fill in the short form. We contact you to confirm the booking.</p></div>
+  </div>
+</div></section>
+<section class="sec"><div class="wrap">
+  <div class="head"><div><h2>What renters say</h2><p>Sample reviews for this academic prototype.</p></div></div>
+  <div class="grid">
+    <div class="card q"><span class="stars">★★★★★</span><p>Found a Corolla in two minutes and knew the total before I called. Pickup was smooth.</p><small>Sample review · Business traveller</small></div>
+    <div class="card q"><span class="stars">★★★★★</span><p>The seven-seat Fortuner was perfect for our family trip. The calculator saved a lot of guessing.</p><small>Sample review · Family trip</small></div>
+    <div class="card q"><span class="stars">★★★★☆</span><p>Good range of cars at honest prices. I would like to see more automatic economy options.</p><small>Sample review · Weekend renter</small></div>
+  </div>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap"><div class="cta">
+  <div><h2>Ready to pick your car?</h2><p>Check the price for your dates in under a minute.</p></div>
+  <a class="btn light" href="rent.html">Request a rental</a></div></div></section>
+</main>
+<footer id="footer"></footer>
+<script src="js/data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/cars.js"></script>
 </body>
 </html>

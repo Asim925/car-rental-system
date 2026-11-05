@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Vehicles | DriveEase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="cars">
+<header id="header"></header>
+<main>
+<section class="ph"><div class="wrap"><div class="crumb"><a href="index.html">Home</a> / Cars</div><h1>Our vehicles</h1><p>Find the right car for your trip, budget and group size.</p></div></section>
+<section class="sec" style="padding-top:40px"><div class="wrap">
+  <div class="card filters">
+    <label>Search<input id="q" type="search" placeholder="Car name"></label>
+    <label>Category<select id="cat"><option value="all">All categories</option><option>Economy</option><option>Sedan</option><option>SUV</option><option>Luxury</option></select></label>
+    <label>Transmission<select id="trans"><option value="all">All types</option><option>Automatic</option><option>Manual</option></select></label>
+    <label>Max budget per day<select id="budget"><option value="all">Any price</option><option value="3000">Under ₨3,000</option><option value="5000">Under ₨5,000</option><option value="8000">Under ₨8,000</option><option value="15000">Under ₨15,000</option></select></label>
+    <label>Sort by<select id="sort"><option value="default">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></label>
+  </div>
+  <p class="count" id="count" aria-live="polite"></p>
+  <div class="grid" id="grid"></div>
+  <div class="empty hidden" id="empty"><p>No cars match these filters. Try a higher budget or a different category.</p><button class="btn line" id="reset" style="margin-top:14px">Reset filters</button></div>
+</div></section>
+<section class="sec alt"><div class="wrap">
+  <div class="head"><div><h2>Before you choose</h2></div></div>
+  <div class="grid">
+    <div class="card"><h3>Seats and luggage</h3><p>Economy cars suit one to two bags. Choose an SUV when you travel with four or more people and luggage.</p></div>
+    <div class="card"><h3>Automatic or manual</h3><p>Automatic cars are easier in heavy traffic. Manual cars are usually cheaper per day.</p></div>
+    <div class="card"><h3>Petrol or diesel</h3><p>Most cars run on petrol. The Fortuner runs on diesel, which suits long highway distances.</p></div>
+  </div>
+</div></section>
+</main>
+<footer id="footer"></footer>
+<script src="js/data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/cars.js"></script>
+</body>
+</html>
