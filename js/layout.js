@@ -1,9 +1,15 @@
 // Shared header, footer, toast and helpers
-const $ = id => document.getElementById(id);
-const fmt = n => "₨" + n.toLocaleString("en-US");
+const $ = (id) => document.getElementById(id);
+const fmt = (n) => "₨" + n.toLocaleString("en-US");
 const P = new URLSearchParams(location.search);
 const today = new Date().toISOString().split("T")[0];
-const PAGES = [["index", "Home"], ["cars", "Cars"], ["rent", "Rent"], ["about", "About"], ["contact", "Contact"]];
+const PAGES = [
+  ["index", "Home"],
+  ["cars", "Cars"],
+  ["rent", "Rent"],
+  ["about", "About"],
+  ["contact", "Contact"],
+];
 const cur = document.body.dataset.page;
 
 $("header").className = "top";
