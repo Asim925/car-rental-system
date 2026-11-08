@@ -1,11 +1,11 @@
 :root {
-  --navy: #0c2340;
-  --blue: #1e5bd8;
-  --blued: #1648b0;
+  --dark: #171717;
+  --black: #181616;
+  --blackd: #4b4b4b;
   --ink: #16212e;
   --muted: #5b6778;
   --line: #dfe5ec;
-  --bg: #f5f7fa;
+  --bg: #fffdf9;
   --gold: #c9972b;
   --r: 10px;
 }
@@ -29,7 +29,7 @@ h2,
 h3 {
   font-family: "Source Serif 4", Georgia, serif;
   line-height: 1.2;
-  color: var(--navy);
+  color: var(--dark);
 }
 h1 {
   font-size: clamp(2rem, 4.5vw, 3.2rem);
@@ -49,7 +49,7 @@ img {
   display: block;
 }
 :focus-visible {
-  outline: 2px solid var(--blue);
+  outline: 2px solid var(--black);
   outline-offset: 2px;
 }
 .wrap {
@@ -84,7 +84,7 @@ img {
   margin-top: 4px;
 }
 .more {
-  color: var(--blue);
+  color: var(--black);
   font-weight: 700;
 }
 .grid {
@@ -137,13 +137,13 @@ img {
   font:
     700 1.35rem "Source Serif 4",
     serif;
-  color: var(--navy);
+  color: var(--dark);
 }
 .logo i {
   width: 34px;
   height: 34px;
   border-radius: 8px;
-  background: var(--navy);
+  background: var(--dark);
   color: #fff;
   display: grid;
   place-items: center;
@@ -163,11 +163,11 @@ img {
   color: var(--muted);
 }
 .links a:hover {
-  color: var(--navy);
+  color: var(--dark);
 }
 .links a.on {
-  color: var(--blue);
-  box-shadow: inset 0 -2px var(--blue);
+  color: var(--black);
+  box-shadow: inset 0 -2px var(--black);
 }
 .links a.btn {
   padding: 9px 18px;
@@ -175,7 +175,7 @@ img {
   margin-left: 8px;
 }
 .links a.btn:hover {
-  background: var(--blued);
+  background: var(--blackd);
   color: #fff;
 }
 .burger {
@@ -200,15 +200,15 @@ img {
   text-align: center;
 }
 .primary {
-  background: var(--blue);
+  background: var(--black);
   color: #fff;
 }
 .primary:hover {
-  background: var(--blued);
+  background: var(--blackd);
 }
 .light {
   background: #fff;
-  color: var(--navy);
+  color: var(--dark);
 }
 .ghost {
   border-color: rgba(255, 255, 255, 0.55);
@@ -216,7 +216,7 @@ img {
 }
 .line {
   border-color: var(--line);
-  color: var(--navy);
+  color: var(--dark);
   background: #fff;
 }
 .line:hover {
@@ -225,8 +225,8 @@ img {
 /* hero */
 .hero {
   background:
-    linear-gradient(90deg, rgba(12, 35, 64, 0.96) 38%, rgba(12, 35, 64, 0.55)),
-    url(https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1600&fit=crop)
+    linear-gradient(100deg, rgba(0, 0, 0, 0.96) 38%, rgba(130, 130, 130, 0.55)),
+    url(https://wisewheels.com.pk/blogs/wp-content/uploads/2026/04/Top-Car-Brands-in-Pakistan-Whos-Dominating-the-Market.webp)
       center/cover;
   color: #fff;
   padding: 96px 0 112px;
@@ -273,7 +273,7 @@ img {
   font:
     700 1.8rem "Source Serif 4",
     serif;
-  color: var(--navy);
+  color: var(--dark);
 }
 .stats span {
   color: var(--muted);
@@ -281,19 +281,19 @@ img {
 }
 .cat {
   display: block;
-  border-left: 4px solid var(--blue);
+  border-left: 4px solid var(--black);
 }
 .cat:hover {
   background: #f8faff;
 }
 .cat b {
-  color: var(--blue);
+  color: var(--black);
 }
 .step b {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--navy);
+  background: var(--dark);
   color: #fff;
   display: grid;
   place-items: center;
@@ -311,7 +311,7 @@ img {
   color: var(--muted);
 }
 .cta {
-  background: var(--navy);
+  background: var(--dark);
   color: #fff;
   border-radius: 14px;
   padding: 44px;
@@ -330,7 +330,7 @@ img {
 }
 /* inner page head */
 .ph {
-  background: var(--navy);
+  background: var(--dark);
   color: #fff;
   padding: 44px 0;
 }
@@ -384,7 +384,7 @@ img {
 }
 .price {
   font-weight: 800;
-  color: var(--blue);
+  color: var(--black);
   white-space: nowrap;
 }
 .price small {
@@ -477,7 +477,7 @@ img {
   content: "✓";
   position: absolute;
   left: 0;
-  color: var(--blue);
+  color: var(--black);
   font-weight: 800;
 }
 /* forms */
@@ -546,7 +546,7 @@ textarea {
   padding-top: 10px;
   font-weight: 800;
   font-size: 1.3rem;
-  color: var(--navy);
+  color: var(--dark);
 }
 .lay {
   display: grid;
@@ -563,7 +563,7 @@ textarea {
   display: block;
 }
 .info b {
-  color: var(--navy);
+  color: var(--dark);
 }
 details {
   background: #fff;
@@ -577,7 +577,7 @@ details + details {
 summary {
   font-weight: 700;
   cursor: pointer;
-  color: var(--navy);
+  color: var(--dark);
 }
 details p {
   margin-top: 10px;
@@ -587,7 +587,7 @@ details p {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: var(--navy);
+  background: var(--dark);
   color: #fff;
   display: grid;
   place-items: center;
@@ -604,7 +604,7 @@ details p {
 }
 /* footer, toast */
 .ft {
-  background: var(--navy);
+  background: var(--dark);
   color: #9fb2cc;
   padding: 48px 0 24px;
   font-size: 0.92rem;
@@ -637,7 +637,7 @@ details p {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  background: var(--navy);
+  background: var(--dark);
   color: #fff;
   padding: 14px 20px;
   border-radius: 10px;
@@ -650,6 +650,37 @@ details p {
 }
 .toast.show {
   transform: none;
+}
+.rent-preview {
+  display: grid;
+  gap: 10px;
+  background: linear-gradient(180deg, #f6f7fb 0%, #eef3ff 100%);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+}
+.rent-preview img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #e7ebf4;
+}
+.rent-preview__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.rent-preview__meta strong {
+  color: var(--dark);
+  font-size: 1rem;
+}
+.rent-preview__meta span {
+  font-weight: 800;
+  color: var(--dark);
 }
 @media (max-width: 820px) {
   .burger {

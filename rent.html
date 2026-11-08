@@ -34,6 +34,13 @@
               </p>
               <div class="f">
                 <label>Vehicle<select id="calcCar"></select></label>
+                <div class="rent-preview" id="calcPreview">
+                  <img id="calcPreviewImg" src="" alt="Selected car" />
+                  <div class="rent-preview__meta">
+                    <strong id="calcPreviewName">Car</strong>
+                    <span id="calcPreviewPrice">Price</span>
+                  </div>
+                </div>
                 <div class="f2">
                   <label>Pickup date<input type="date" id="calcP" /></label
                   ><label>Return date<input type="date" id="calcR" /></label>
@@ -104,6 +111,13 @@
                 <label
                   >Preferred car *<select id="rentCar" required></select
                 ></label>
+                <div class="rent-preview" id="rentPreview">
+                  <img id="rentPreviewImg" src="" alt="Selected rental car" />
+                  <div class="rent-preview__meta">
+                    <strong id="rentPreviewName">Car</strong>
+                    <span id="rentPreviewPrice">Price</span>
+                  </div>
+                </div>
                 <div class="f2">
                   <label
                     >Pickup date *<input
@@ -158,6 +172,19 @@
                 <li>Payment is made at pickup</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+      <section class="sec">
+        <div class="wrap">
+          <div class="cta">
+            <div>
+              <h2>Need a car for your next trip or daily commute?</h2>
+              <p>
+                Choose your vehicle, set your dates, and let us handle the rest.
+              </p>
+            </div>
+            <a class="btn primary" href="#rentalForm">Book your ride</a>
           </div>
         </div>
       </section>

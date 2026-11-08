@@ -14,7 +14,7 @@ const cur = document.body.dataset.page;
 
 $("header").className = "top";
 $("header").innerHTML = `<div class="wrap nav">
-  <a class="logo" href="index.html"><i>D</i>DriveEase</a>
+  <a class="logo" href="index.html"><i><img src = "https://static.vecteezy.com/system/resources/previews/050/884/105/non_2x/rent-car-logo-flat-design-template-free-vector.jpg"/></i>DriveEase</a>
   <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">☰</button>
   <nav class="links" id="links">${PAGES.map(([p, l]) => `<a href="${p}.html"${p === cur ? ' class="on" aria-current="page"' : ""}>${l}</a>`).join("")}<a class="btn primary" href="rent.html">Book now</a></nav></div>`;
 $("burger").onclick = () => {

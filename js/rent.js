@@ -56,3 +56,43 @@ $("rentalForm").onsubmit = (e) => {
   e.target.reset();
   $("res").classList.add("hidden");
 };
+
+function setCarPreview(selectId, imgId, nameId, priceId) {
+  const selected = CARS.find((c) => String(c.id) === String($(selectId).value));
+  const imgEl = $(imgId);
+  const nameEl = $(nameId);
+  const priceEl = $(priceId);
+
+  if (!selected || !imgEl || !nameEl || !priceEl) return;
+
+  imgEl.onerror = () => {
+    imgEl.src = FALLBACK;
+    imgEl.onerror = null;
+  };
+  imgEl.src = selected.img;
+  imgEl.alt = `${selected.name} preview`;
+  nameEl.textContent = selected.name;
+  priceEl.textContent = `${fmt(selected.price)}/day`;
+}
+
+["calcCar", "rentCar"].forEach((id) => {
+  $(id).addEventListener("change", () => {
+    const previewMap = {
+      calcCar: ["calcPreviewImg", "calcPreviewName", "calcPreviewPrice"],
+      rentCar: ["rentPreviewImg", "rentPreviewName", "rentPreviewPrice"],
+    };
+    const [imgId, nameId, priceId] = previewMap[id];
+    setCarPreview(id, imgId, nameId, priceId);
+  });
+});
+
+["calcCar", "rentCar"].forEach((i) => {
+  $(i).innerHTML = opts;
+  if (P.get("car")) $(i).value = P.get("car");
+  const previewMap = {
+    calcCar: ["calcPreviewImg", "calcPreviewName", "calcPreviewPrice"],
+    rentCar: ["rentPreviewImg", "rentPreviewName", "rentPreviewPrice"],
+  };
+  const [imgId, nameId, priceId] = previewMap[i];
+  setCarPreview(i, imgId, nameId, priceId);
+});
