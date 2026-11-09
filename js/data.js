@@ -1,48 +1,51 @@
-const U = (id) => `https://images.unsplash.com/${id}?w=800&h=520&fit=crop`;
-const FALLBACK = U("photo-1494976388531-d1058494cdd8");
-const FEATURES = {
+var FALLBACK =
+  "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&h=520&fit=crop";
+
+var FEATURES = {
   Economy: [
     "Air conditioning",
-    "Great fuel economy",
+    "Good fuel economy",
     "Easy city parking",
     "Bluetooth / USB audio",
   ],
   Sedan: [
     "Air conditioning",
-    "Spacious rear seats",
+    "Comfortable back seats",
     "Large boot",
     "Bluetooth / USB audio",
-    "Rear parking sensors",
+    "Rear sensors",
   ],
   Hatchback: [
     "Air conditioning",
-    "Easy city parking",
+    "Easy to park",
     "Foldable rear seats",
     "Bluetooth / USB audio",
   ],
   SUV: [
-    "Dual-zone climate control",
+    "Dual climate control",
     "High ground clearance",
     "Extra luggage space",
     "Rear camera",
-    "Suited to long highway trips",
+    "Good for longer trips",
   ],
   Luxury: [
-    "Leather interior",
+    "Leather seats",
     "Premium sound system",
     "Cruise control",
     "Rear camera and sensors",
     "Optional chauffeur",
   ],
 };
-const LUGGAGE = {
+
+var LUGGAGE = {
   Economy: "1-2 bags",
   Sedan: "3 bags",
   Hatchback: "2-3 bags",
   SUV: "4+ bags",
   Luxury: "3 bags",
 };
-const CARS = [
+
+var CARS = [
   {
     id: 1,
     name: "Suzuki Alto",
@@ -52,7 +55,7 @@ const CARS = [
     trans: "Manual",
     fuel: "Petrol",
     img: "https://autos.hamariweb.com/images/carimages/car_216_638691154216450718.jpg",
-    desc: "A budget-friendly option for daily travel, short trips, and getting around the city.",
+    desc: "A simple and affordable car for city driving and short daily trips.",
   },
   {
     id: 2,
@@ -63,7 +66,7 @@ const CARS = [
     trans: "Manual",
     fuel: "Petrol",
     img: "https://media.ed.edmunds-media.com/toyota/corolla-hatchback/2021/oem/2021_toyota_corolla-hatchback_4dr-hatchback_se-nightshade-edition_fq_oem_1_1600.jpg",
-    desc: "A comfortable and reliable car, perfect for family trips and everyday journeys.",
+    desc: "A comfortable and reliable sedan for everyday use and family travel.",
   },
   {
     id: 3,
@@ -74,7 +77,7 @@ const CARS = [
     trans: "Manual",
     fuel: "Petrol",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfap9z8LcLtOcVD6DpLMMKX6hXprZAX3btsKl33IbixbCP1RphlR5DqQc&s=10",
-    desc: "A practical sedan with a comfortable interior and plenty of room for passengers.",
+    desc: "A practical sedan with a comfortable cabin and good space for passengers.",
   },
   {
     id: 4,
@@ -85,7 +88,7 @@ const CARS = [
     trans: "Manual",
     fuel: "Petrol",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTPyKNby5O5N-Mt70rOj_t_5J-oH5OPRjIeaRJGvmHxZC81VjvafI6nyM&s=10",
-    desc: "Easy to drive and economical, making it a great choice for everyday use.",
+    desc: "Easy to drive and affordable, which makes it a great daily-use choice.",
   },
   {
     id: 5,
@@ -96,7 +99,7 @@ const CARS = [
     trans: "Automatic",
     fuel: "Petrol",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkxmAAPWK2jVGa-v-E0RD9S6095Ftx-NptjBGUOqYCbA&s=10",
-    desc: "A spacious 7-seater for family outings and trips with friends.",
+    desc: "A roomy SUV with extra space for family travel and weekend trips.",
   },
   {
     id: 6,
@@ -107,7 +110,7 @@ const CARS = [
     trans: "Manual",
     fuel: "Petrol",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-Ue5llWU9RtZQ2Ls61_R5vGLGsideGZsgRAeWa3ACbhXc_4lv0GTJNw&s=10",
-    desc: "A roomy and affordable hatchback that works well for city travel.",
+    desc: "A roomy and budget-friendly hatchback that works well for city travel.",
   },
   {
     id: 7,
@@ -118,7 +121,7 @@ const CARS = [
     trans: "Automatic",
     fuel: "Petrol",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNlE8cYf7Gygh-4oRvhdz8-QfPUpCv1lK_HkO2GHosYNtcjlKXPb5ad7Y&s=10",
-    desc: "A smooth and comfortable ride for daily commutes and longer drives.",
+    desc: "A smooth and comfortable car for work, errands, and longer journeys.",
   },
   {
     id: 8,
@@ -129,7 +132,7 @@ const CARS = [
     trans: "Manual",
     fuel: "Petrol",
     img: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Suzuki_Swift_%282024%29_hybrid_DSC_7922.jpg/1280px-Suzuki_Swift_%282024%29_hybrid_DSC_7922.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
-    desc: "A compact hatchback that's fun to drive and convenient for city journeys.",
+    desc: "A compact car that is easy to drive and good for city use.",
   },
   {
     id: 9,
@@ -140,7 +143,7 @@ const CARS = [
     trans: "Automatic",
     fuel: "Petrol",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI61g2PPqEmPQq039GtvenKXEDQBZ-gRJ-kx77S438Qm0ew1HRM6xHFCfW&s=10",
-    desc: "A small automatic car that's easy to handle and ideal for busy city roads.",
+    desc: "A practical automatic option for busy city roads and daily travel.",
   },
   {
     id: 10,
@@ -151,7 +154,7 @@ const CARS = [
     trans: "Automatic",
     fuel: "Petrol",
     img: "https://upload.wikimedia.org/wikipedia/commons/d/dd/7th_generation_Daihatsu_Mira_01.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
-    desc: "A fuel-efficient automatic car for convenient and affordable daily travel.",
+    desc: "A small fuel-efficient car that is easy to handle in tight city traffic.",
   },
   {
     id: 11,
@@ -162,7 +165,7 @@ const CARS = [
     trans: "Automatic",
     fuel: "Diesel",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz4yOZbhd9RnaVuLsQcyf3l4n4HTZpglizd9Vrbc7fbQ&s",
-    desc: "A spacious SUV with plenty of room for family trips and long-distance travel.",
+    desc: "A big SUV with strong space and comfort for long drives and family trips.",
   },
   {
     id: 12,
@@ -173,6 +176,6 @@ const CARS = [
     trans: "Automatic",
     fuel: "Petrol",
     img: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Honda_Civic_e-HEV_Sport_%28XI%29_%E2%80%93_f_30062024.jpg/1280px-Honda_Civic_e-HEV_Sport_%28XI%29_%E2%80%93_f_30062024.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
-    desc: "A comfortable sedan with a premium feel, ideal for business trips and special occasions.",
+    desc: "A comfortable sedan with a premium look and good comfort on longer rides.",
   },
 ];

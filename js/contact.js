@@ -1,5 +1,6 @@
-$("contactForm").onsubmit = (e) => {
-  e.preventDefault();
-  toast("Message sent. We reply within one working day.");
-  e.target.reset();
+document.getElementById("contactForm").onsubmit = function (event) {
+  event.preventDefault();
+
+  showToast("Message sent. We reply within one working day.");
+  event.target.reset();
 };
