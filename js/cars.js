@@ -1,4 +1,3 @@
-// Car cards, home page extras, fleet filters and car detail page
 const card = (c) => `<article class="card car">
   <img src="${c.img}" alt="${c.name}" loading="lazy" onerror="this.src=FALLBACK">
   <div class="b"><div class="t"><div><h3>${c.name}</h3><span class="tag">${c.cat}</span></div>

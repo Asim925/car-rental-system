@@ -1,50 +1,62 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Rent a Car | DriveEase</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <title>rent a car | driveease</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body data-page="rent">
     <header id="header"></header>
+
     <main>
       <section class="ph">
         <div class="wrap">
-          <div class="crumb"><a href="index.html">Home</a> / Rent</div>
-          <h1>Rent a car</h1>
+          <div class="crumb"><a href="index.html">home</a> / rent</div>
+
+          <h1>rent a car</h1>
           <p>
-            Estimate your cost, then send a rental request. We call to confirm.
+            pick a car, choose your dates, and check the estimated cost. once
+            you're done, just send us your details and we’ll get back to you
+            about the booking.
           </p>
         </div>
       </section>
+
       <section class="sec" style="padding-top: 40px">
         <div class="wrap">
           <div class="lay">
             <div class="card">
-              <h2 style="font-size: 1.4rem">Rental cost calculator</h2>
+              <h2 style="font-size: 1.4rem">check your rental cost</h2>
               <p style="margin-bottom: 20px">
-                Get an instant estimate before you book.
+                select a car and dates to see how much the rental might cost.
               </p>
+
               <div class="f">
-                <label>Vehicle<select id="calcCar"></select></label>
+                <label>
+                  select a car
+                  <select id="calcCar"></select>
+                </label>
+
                 <div class="rent-preview" id="calcPreview">
-                  <img id="calcPreviewImg" src="" alt="Selected car" />
+                  <img id="calcPreviewImg" src="" alt="selected car" />
                   <div class="rent-preview__meta">
-                    <strong id="calcPreviewName">Car</strong>
-                    <span id="calcPreviewPrice">Price</span>
+                    <strong id="calcPreviewName">car</strong>
+                    <span id="calcPreviewPrice">price</span>
                   </div>
                 </div>
+
                 <div class="f2">
-                  <label>Pickup date<input type="date" id="calcP" /></label
-                  ><label>Return date<input type="date" id="calcR" /></label>
+                  <label>
+                    pickup date
+                    <input type="date" id="calcP" />
+                  </label>
+
+                  <label>
+                    return date
+                    <input type="date" id="calcR" />
+                  </label>
                 </div>
+
                 <fieldset
                   style="border: 0; padding: 0; display: grid; gap: 10px"
                 >
@@ -56,140 +68,167 @@
                       margin-bottom: 8px;
                     "
                   >
-                    Extras (per day)
+                    extra options (per day)
                   </legend>
-                  <label class="chk"
-                    ><input class="ex" type="checkbox" value="driver" />
-                    Professional driver <span>₨1,500</span></label
-                  >
-                  <label class="chk"
-                    ><input class="ex" type="checkbox" value="ins" /> Full
-                    insurance cover <span>₨800</span></label
-                  >
-                  <label class="chk"
-                    ><input class="ex" type="checkbox" value="gps" /> GPS
-                    navigation <span>₨400</span></label
-                  >
-                  <label class="chk"
-                    ><input class="ex" type="checkbox" value="seat" /> Child
-                    seat <span>₨300</span></label
-                  >
+
+                  <label class="chk">
+                    <input class="ex" type="checkbox" value="driver" />
+                    driver <span>₨1,500</span>
+                  </label>
+
+                  <label class="chk">
+                    <input class="ex" type="checkbox" value="ins" />
+                    full insurance <span>₨800</span>
+                  </label>
+
+                  <label class="chk">
+                    <input class="ex" type="checkbox" value="gps" />
+                    gps <span>₨400</span>
+                  </label>
+
+                  <label class="chk">
+                    <input class="ex" type="checkbox" value="seat" />
+                    child seat <span>₨300</span>
+                  </label>
                 </fieldset>
+
                 <button class="btn primary" id="calc" type="button">
-                  Calculate cost
+                  calculate price
                 </button>
               </div>
+
               <div class="res hidden" id="res" aria-live="polite">
                 <div id="rows" style="display: block"></div>
               </div>
             </div>
+
             <div class="card">
-              <h2 style="font-size: 1.4rem">Rental request form</h2>
+              <h2 style="font-size: 1.4rem">send a rental request</h2>
               <p style="margin-bottom: 20px">
-                Extras ticked in the calculator are included in your estimate.
+                fill in your details below. any extras you selected in the
+                calculator will be included in your estimate.
               </p>
+
               <form class="f" id="rentalForm">
                 <div class="f2">
-                  <label
-                    >Full name *<input
+                  <label>
+                    your name *
+                    <input
                       id="rentName"
                       required
-                      placeholder="Your name" /></label
-                  ><label
-                    >Phone *<input
-                      type="tel"
-                      required
-                      placeholder="03XX-XXXXXXX"
-                  /></label>
+                      placeholder="enter your name"
+                    />
+                  </label>
+
+                  <label>
+                    phone number *
+                    <input type="tel" required placeholder="03xx-xxxxxxx" />
+                  </label>
                 </div>
-                <label
-                  >Email *<input
-                    type="email"
-                    required
-                    placeholder="you@email.com"
-                /></label>
-                <label
-                  >Preferred car *<select id="rentCar" required></select
-                ></label>
+
+                <label>
+                  email address *
+                  <input type="email" required placeholder="you@email.com" />
+                </label>
+
+                <label>
+                  which car do you want? *
+                  <select id="rentCar" required></select>
+                </label>
+
                 <div class="rent-preview" id="rentPreview">
-                  <img id="rentPreviewImg" src="" alt="Selected rental car" />
+                  <img id="rentPreviewImg" src="" alt="selected rental car" />
                   <div class="rent-preview__meta">
-                    <strong id="rentPreviewName">Car</strong>
-                    <span id="rentPreviewPrice">Price</span>
+                    <strong id="rentPreviewName">car</strong>
+                    <span id="rentPreviewPrice">price</span>
                   </div>
                 </div>
+
                 <div class="f2">
-                  <label
-                    >Pickup date *<input
-                      type="date"
-                      id="rentP"
-                      required /></label
-                  ><label
-                    >Return date *<input type="date" id="rentR" required
-                  /></label>
+                  <label>
+                    pickup date *
+                    <input type="date" id="rentP" required />
+                  </label>
+
+                  <label>
+                    return date *
+                    <input type="date" id="rentR" required />
+                  </label>
                 </div>
-                <label
-                  >Notes (optional)<textarea
+
+                <label>
+                  anything else? (optional)
+                  <textarea
                     rows="3"
-                    placeholder="Pickup location, special requests"
+                    placeholder="you can mention your pickup location or any special requests here."
                   ></textarea>
                 </label>
-                <button class="btn primary" type="submit">
-                  Submit request
-                </button>
+
+                <button class="btn primary" type="submit">send request</button>
               </form>
             </div>
           </div>
         </div>
       </section>
+
       <section class="sec alt">
         <div class="wrap">
           <div class="head">
-            <div><h2>What to know before you rent</h2></div>
+            <div>
+              <h2>a few things to know</h2>
+              <p>just some basic information before you send your request.</p>
+            </div>
           </div>
+
           <div class="grid">
             <div class="card">
-              <h3>Documents</h3>
+              <h3>what you'll need</h3>
               <ul class="list">
-                <li>Valid driving licence</li>
-                <li>CNIC or passport</li>
-                <li>Renters must be 21 or older</li>
+                <li>a valid driving licence</li>
+                <li>cnic or passport</li>
+                <li>minimum age: 21 years</li>
               </ul>
             </div>
+
             <div class="card">
-              <h3>Pricing</h3>
+              <h3>rental prices</h3>
               <ul class="list">
-                <li>5% off for 3 to 6 days</li>
-                <li>10% off for 7 days or more</li>
-                <li>Refundable security deposit at pickup</li>
+                <li>5% discount for 3 to 6 days</li>
+                <li>10% discount for 7 days or more</li>
+                <li>security deposit is refundable</li>
               </ul>
             </div>
+
             <div class="card">
-              <h3>After you submit</h3>
+              <h3>what happens next?</h3>
               <ul class="list">
-                <li>We call to confirm availability</li>
-                <li>Free cancellation up to 24 hours before pickup</li>
-                <li>Payment is made at pickup</li>
+                <li>we'll contact you to check availability</li>
+                <li>cancellation is free up to 24 hours before pickup</li>
+                <li>payment is made at pickup</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
+
       <section class="sec">
         <div class="wrap">
           <div class="cta">
             <div>
-              <h2>Need a car for your next trip or daily commute?</h2>
+              <h2>need a car? let's get started.</h2>
               <p>
-                Choose your vehicle, set your dates, and let us handle the rest.
+                choose the car you like, add your dates, and send us a request.
               </p>
             </div>
-            <a class="btn primary" href="#rentalForm">Book your ride</a>
+
+            <a class="btn primary" href="#rentalForm">rent a car</a>
           </div>
         </div>
       </section>
     </main>
+
     <footer id="footer"></footer>
+
     <script src="js/data.js"></script>
     <script src="js/layout.js"></script>
     <script src="js/rent.js"></script>

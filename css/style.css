@@ -57,6 +57,7 @@ img {
   margin: auto;
   padding: 0 20px;
 }
+
 .sec {
   padding: 64px 0;
 }
@@ -116,7 +117,6 @@ img {
   gap: 12px;
   flex-wrap: wrap;
 }
-/* header */
 .top {
   position: sticky;
   top: 0;
@@ -167,7 +167,10 @@ img {
 }
 .links a.on {
   color: var(--black);
-  box-shadow: inset 0 -2px var(--black);
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 1px rgba(24, 22, 22, 0.08);
 }
 .links a.btn {
   padding: 9px 18px;
@@ -187,7 +190,6 @@ img {
   padding: 6px 12px;
   cursor: pointer;
 }
-/* buttons */
 .btn {
   display: inline-block;
   padding: 12px 22px;
@@ -222,14 +224,34 @@ img {
 .line:hover {
   background: var(--bg);
 }
-/* hero */
+.hero-backg {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: url(https://wisewheels.com.pk/blogs/wp-content/uploads/2026/04/Top-Car-Brands-in-Pakistan-Whos-Dominating-the-Market.webp)
+    center/cover no-repeat;
+}
+.hero-backg::before {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px) brightness(0.6) saturate(0.9);
+  transform: scale(1.12);
+  z-index: 0;
+}
 .hero {
-  background:
-    linear-gradient(100deg, rgba(0, 0, 0, 0.96) 38%, rgba(130, 130, 130, 0.55)),
-    url(https://wisewheels.com.pk/blogs/wp-content/uploads/2026/04/Top-Car-Brands-in-Pakistan-Whos-Dominating-the-Market.webp)
-      center/cover;
+  position: relative;
+  z-index: 1;
+  background: rgba(9, 16, 24, 0.42);
   color: #fff;
   padding: 96px 0 112px;
+}
+.hero .wrap {
+  position: relative;
+  z-index: 1;
 }
 .hero h1 {
   color: #fff;
@@ -240,7 +262,7 @@ img {
   margin: 18px 0 28px;
 }
 .quote {
-  margin-top: -52px;
+  margin-top: 32px;
   position: relative;
   background: #fff;
   border: 1px solid var(--line);
@@ -328,7 +350,6 @@ img {
   color: #b9c8dd;
   margin-top: 6px;
 }
-/* inner page head */
 .ph {
   background: var(--dark);
   color: #fff;
@@ -350,7 +371,6 @@ img {
 .crumb a:hover {
   text-decoration: underline;
 }
-/* cars */
 .car {
   padding: 0;
   overflow: hidden;
@@ -433,7 +453,6 @@ img {
   padding: 56px 0;
   color: var(--muted);
 }
-/* detail */
 .dt {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -480,7 +499,6 @@ img {
   color: var(--black);
   font-weight: 800;
 }
-/* forms */
 .f {
   display: grid;
   gap: 16px;
@@ -602,7 +620,6 @@ details p {
 .tm p {
   margin-top: 2px;
 }
-/* footer, toast */
 .ft {
   background: var(--dark);
   color: #fff;
@@ -734,8 +751,6 @@ details p {
     scroll-behavior: auto !important;
   }
 }
-
-/* Small, page-specific touches for the fleet and vehicle detail pages. */
 body[data-page="cars"] .ph {
   background: #25231f;
   padding: 48px 0 52px;
@@ -754,7 +769,9 @@ body[data-page="cars"] .filters {
 body[data-page="cars"] .car {
   border-color: #e4ddd2;
   border-radius: 0;
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
 }
 body[data-page="cars"] .car:hover {
   box-shadow: 0 8px 18px rgba(36, 31, 23, 0.1);

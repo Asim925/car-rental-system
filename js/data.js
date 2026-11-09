@@ -1,4 +1,3 @@
-// Shared vehicle data used by every page
 const U = (id) => `https://images.unsplash.com/${id}?w=800&h=520&fit=crop`;
 const FALLBACK = U("photo-1494976388531-d1058494cdd8");
 const FEATURES = {

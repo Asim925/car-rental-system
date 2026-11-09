@@ -1,5 +1,4 @@
-// Rental calculator and request form
-const EXTRAS = { driver: 1500, seat: 300, gps: 400, ins: 800 }; // per day
+const EXTRAS = { driver: 1500, seat: 300, gps: 400, ins: 800 };
 const opts = CARS.map(
   (c) => `<option value="${c.id}">${c.name} — ${fmt(c.price)}/day</option>`,
 ).join("");

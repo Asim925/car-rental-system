@@ -1,226 +1,275 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Car Rental in Karachi | DriveEase</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <title>DriveEase car service</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body data-page="index">
     <header id="header"></header>
+
     <main>
-      <section class="hero">
-        <div class="wrap">
-          <h1>Rent a car in Karachi without the back-and-forth</h1>
-          <p class="lead">
-            Compare 12 vehicles in one place, see the full price for your dates,
-            and send a single request. Economy cars start at ₨2,500 a day.
-          </p>
-          <div class="row">
-            <a class="btn light" href="cars.html">Browse cars</a
-            ><a class="btn ghost" href="rent.html">Request a rental</a>
+      <section class="hero-backg">
+        <div class="hero">
+          <div class="wrap">
+            <h1>need a car in karachi? we've got you covered.</h1>
+            <p class="lead">
+              looking for a car to rent? have a look at our collection, compare
+              the prices and find something that suits your trip. whether its a
+              quick drive around the city or a family outing, we have cars
+              starting from rs. 2,500 per day.
+            </p>
+
+            <div class="row">
+              <a href="cars.html" class="btn light">browse cars</a>
+              <a href="rent.html" class="btn ghost">rent a car</a>
+            </div>
           </div>
         </div>
       </section>
+
       <div class="wrap">
         <form class="quote" action="rent.html">
-          <label>Vehicle<select name="car" id="qCar"></select></label>
-          <label
-            >Pickup date<input type="date" name="pickup" id="qP" required
-          /></label>
-          <label
-            >Return date<input type="date" name="return" id="qR" required
-          /></label>
-          <button class="btn primary" type="submit">Check price</button>
+          <label>
+            choose a car
+            <select name="car" id="qCar"></select>
+          </label>
+
+          <label>
+            pickup date
+            <input type="date" name="pickup" id="qP" required />
+          </label>
+
+          <label>
+            return date
+            <input type="date" name="return" id="qR" required />
+          </label>
+
+          <button type="submit" class="btn primary">check price</button>
         </form>
+
         <div class="stats">
-          <div><b>12+</b><span>Vehicles</span></div>
-          <div><b>₨2.5K</b><span>From, per day</span></div>
-          <div><b>4</b><span>Categories</span></div>
-          <div><b>24/7</b><span>Support</span></div>
+          <div><b>12+</b><span>cars available</span></div>
+          <div><b>rs. 2.5k</b><span>starting from</span></div>
+          <div><b>4</b><span>car categories</span></div>
+          <div><b>24/7</b><span>customer support</span></div>
         </div>
       </div>
+
       <section class="sec">
         <div class="wrap">
           <div class="head">
             <div>
-              <h2>Browse by category</h2>
-              <p>Start with the kind of trip you have planned.</p>
+              <h2>looking for a particular type of car?</h2>
+              <p>
+                we've divided the cars into a few categories to make things
+                easier.
+              </p>
             </div>
           </div>
+
           <div class="grid g4">
-            <a class="card cat" href="cars.html?cat=Economy"
-              ><h3>Economy</h3>
-              <p>Small, efficient cars for the city.</p>
-              <b>From ₨2,500/day</b></a
-            >
-            <a class="card cat" href="cars.html?cat=Sedan"
-              ><h3>Sedan</h3>
-              <p>Comfortable for family and business trips.</p>
-              <b>From ₨4,000/day</b></a
-            >
-            <a class="card cat" href="cars.html?cat=SUV"
-              ><h3>SUV</h3>
-              <p>Room for seven, ready for long highways.</p>
-              <b>From ₨6,500/day</b></a
-            >
-            <a class="card cat" href="cars.html?cat=Luxury"
-              ><h3>Luxury</h3>
-              <p>Premium cars for weddings and events.</p>
-              <b>From ₨15,000/day</b></a
-            >
+            <a href="cars.html?cat=Economy" class="card cat">
+              <h3>economy</h3>
+              <p>affordable cars for daily use and getting around the city.</p>
+              <b>from rs. 2,500/day</b>
+            </a>
+
+            <a href="cars.html?cat=Sedan" class="card cat">
+              <h3>sedan</h3>
+              <p>
+                a good choice for family trips or travelling around the city.
+              </p>
+              <b>from rs. 4,000/day</b>
+            </a>
+
+            <a href="cars.html?cat=SUV" class="card cat">
+              <h3>suv</h3>
+              <p>more space for passengers and all that extra luggage.</p>
+              <b>from rs. 6,500/day</b>
+            </a>
+
+            <a href="cars.html?cat=Luxury" class="card cat">
+              <h3>luxury</h3>
+              <p>looking for something premium for an event or special day?</p>
+              <b>from rs. 15,000/day</b>
+            </a>
           </div>
         </div>
       </section>
+
       <section class="sec alt">
         <div class="wrap">
           <div class="head">
             <div>
-              <h2>Featured vehicles</h2>
-              <p>Popular picks for your next trip.</p>
+              <h2>cars worth checking out</h2>
+              <p>here are some of the cars from our collection.</p>
             </div>
-            <a class="more" href="cars.html">View all vehicles</a>
+
+            <a href="cars.html" class="more">view all cars</a>
           </div>
+
           <div class="grid" id="featured"></div>
         </div>
       </section>
-      <section class="sec">
-        <div class="wrap">
-          <div class="head">
-            <div><h2>Why rent with DriveEase</h2></div>
-          </div>
-          <div class="grid">
-            <div class="card">
-              <h3>One place to compare</h3>
-              <p>
-                No more calling several rental shops. Every car lists its seats,
-                transmission and fuel type next to its daily rate.
-              </p>
-            </div>
-            <div class="card">
-              <h3>Clear pricing</h3>
-              <p>
-                The calculator shows the daily rate, extras and discounts (5%
-                from 3 days, 10% from 7 days) before you send a request.
-              </p>
-            </div>
-            <div class="card">
-              <h3>Optional extras</h3>
-              <p>
-                Add a driver, child seat, GPS or full insurance to any rental,
-                priced per day.
-              </p>
-            </div>
-            <div class="card">
-              <h3>Cars for every trip</h3>
-              <p>
-                Economy hatchbacks, family sedans, seven-seat SUVs and luxury
-                cars for weddings or business travel.
-              </p>
-            </div>
-            <div class="card">
-              <h3>Simple request form</h3>
-              <p>
-                Send your details and dates once. We call to confirm
-                availability and pickup.
-              </p>
-            </div>
-            <div class="card">
-              <h3>Support when you need it</h3>
-              <p>
-                Reach us by phone or email, every day. See the contact page for
-                hours.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="sec alt">
-        <div class="wrap">
-          <div class="head">
-            <div><h2>How it works</h2></div>
-          </div>
-          <div class="grid">
-            <div class="step">
-              <b>1</b>
-              <h3>Browse cars</h3>
-              <p class="lead">
-                Filter the fleet by category, transmission or daily budget.
-              </p>
-            </div>
-            <div class="step">
-              <b>2</b>
-              <h3>Estimate the cost</h3>
-              <p class="lead">
-                Pick your dates and extras in the calculator for an instant
-                total.
-              </p>
-            </div>
-            <div class="step">
-              <b>3</b>
-              <h3>Submit your request</h3>
-              <p class="lead">
-                Fill in the short form. We contact you to confirm the booking.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+
       <section class="sec">
         <div class="wrap">
           <div class="head">
             <div>
-              <h2>What renters say</h2>
-              <p>Sample reviews for this academic prototype.</p>
+              <h2>why driveease?</h2>
+              <p>here are a few things that make renting a little easier.</p>
             </div>
           </div>
+
           <div class="grid">
-            <div class="card q">
-              <span class="stars">★★★★★</span>
+            <div class="card">
+              <h3>compare cars in one place</h3>
               <p>
-                Found a Corolla in two minutes and knew the total before I
-                called. Pickup was smooth.
+                instead of checking different rental pages, you can browse our
+                cars here and compare their prices, seats and other details.
               </p>
-              <small>Sample review · Business traveller</small>
             </div>
-            <div class="card q">
-              <span class="stars">★★★★★</span>
+
+            <div class="card">
+              <h3>check prices before booking</h3>
               <p>
-                The seven-seat Fortuner was perfect for our family trip. The
-                calculator saved a lot of guessing.
+                no need to guess the total. enter your dates in the calculator
+                and get an idea of how much the rental will cost.
               </p>
-              <small>Sample review · Family trip</small>
             </div>
-            <div class="card q">
-              <span class="stars">★★★★☆</span>
+
+            <div class="card">
+              <h3>need some extras?</h3>
               <p>
-                Good range of cars at honest prices. I would like to see more
-                automatic economy options.
+                you can also request extras like a driver, child seat or
+                insurance when filling out the rental form.
               </p>
-              <small>Sample review · Weekend renter</small>
+            </div>
+
+            <div class="card">
+              <h3>plenty of options</h3>
+              <p>
+                from small cars for everyday use to bigger family cars and
+                luxury vehicles, there's something for different budgets.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>not a complicated process</h3>
+              <p>
+                just select your car, enter the dates and fill in your details.
+                we'll get in touch with you about the request.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>have a question?</h3>
+              <p>
+                confused about a car or want to know something before booking?
+                head over to our contact page and get in touch.
+              </p>
             </div>
           </div>
         </div>
       </section>
+
+      <section class="sec alt">
+        <div class="wrap">
+          <div class="head">
+            <div>
+              <h2>how does it work?</h2>
+              <p>
+                getting started doesn't take much. here's what you need to do.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid">
+            <div class="step">
+              <b>1</b>
+              <h3>find your car</h3>
+              <p class="lead">
+                go through the available cars and choose the one you like.
+              </p>
+            </div>
+
+            <div class="step">
+              <b>2</b>
+              <h3>add your dates</h3>
+              <p class="lead">
+                select when you need the car and when you plan to return it.
+              </p>
+            </div>
+
+            <div class="step">
+              <b>3</b>
+              <h3>send the request</h3>
+              <p class="lead">
+                enter your contact details and submit the form. we'll take it
+                from there and get back to you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <div class="wrap">
+          <div class="head">
+            <div>
+              <h2>what our customers say</h2>
+              <p>a few words about their experience with driveease.</p>
+            </div>
+          </div>
+
+          <div class="grid">
+            <div class="card q">
+              <span class="stars">★★★★★</span>
+              <p>
+                finding a car was pretty easy and i could check the price
+                without having to call around. saved me some time.
+              </p>
+              <small>adeel · business traveller</small>
+            </div>
+
+            <div class="card q">
+              <span class="stars">★★★★★</span>
+              <p>
+                we needed a bigger car for our family trip and the fortuner
+                worked really well for us. had enough space for everyone.
+              </p>
+              <small>hina · family trip</small>
+            </div>
+
+            <div class="card q">
+              <span class="stars">★★★★☆</span>
+              <p>
+                good collection and the prices were easy to understand. would be
+                nice to have a few more automatic cars though.
+              </p>
+              <small>usman · weekend rental</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="sec" style="padding-top: 0">
         <div class="wrap">
           <div class="cta">
             <div>
-              <h2>Ready to pick your car?</h2>
-              <p>Check the price for your dates in under a minute.</p>
+              <h2>found something you like?</h2>
+              <p>go ahead and send us your rental request.</p>
             </div>
-            <a class="btn light" href="rent.html">Request a rental</a>
+
+            <a href="rent.html" class="btn light">get started</a>
           </div>
         </div>
       </section>
     </main>
+
     <footer id="footer"></footer>
+
     <script src="js/data.js"></script>
     <script src="js/layout.js"></script>
     <script src="js/cars.js"></script>

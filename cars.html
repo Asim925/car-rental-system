@@ -1,107 +1,139 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Our Vehicles | DriveEase</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <title>cars | driveease</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body data-page="cars">
     <header id="header"></header>
+
     <main>
       <section class="ph">
         <div class="wrap">
-          <div class="crumb"><a href="index.html">Home</a> / Cars</div>
-          <h1>Find a car that works for your trip</h1>
-          <p>Browse the cars we have listed, compare the basics, and open any one for a closer look.</p>
+          <div class="crumb"><a href="index.html">home</a> / cars</div>
+
+          <h1>take a look at our cars</h1>
+          <p>
+            check out the cars we have available, compare their prices and
+            details, and see which one suits you. you can also use the filters
+            below to find something specific.
+          </p>
         </div>
       </section>
+
       <section class="sec" style="padding-top: 40px">
         <div class="wrap">
           <div class="card filters">
-            <label
-              >Search<input id="q" type="search" placeholder="Try Honda City or Alto"
-            /></label>
-            <label
-              >Category<select id="cat">
-                <option value="all">All categories</option>
-                <option>Economy</option>
-                <option>Sedan</option>
-                <option>SUV</option>
-                <option>Hatchback</option>
-              </select></label
-            >
-            <label
-              >Transmission<select id="trans">
-                <option value="all">All types</option>
-                <option>Automatic</option>
-                <option>Manual</option>
-              </select></label
-            >
-            <label
-              >Max budget per day<select id="budget">
-                <option value="all">Any price</option>
-                <option value="3000">Under ₨3,000</option>
-                <option value="5000">Under ₨5,000</option>
-                <option value="8000">Under ₨8,000</option>
-                <option value="15000">Under ₨15,000</option>
-              </select></label
-            >
-            <label
-              >Sort by<select id="sort">
-                <option value="default">Featured</option>
-                <option value="low">Price: low to high</option>
-                <option value="high">Price: high to low</option>
-              </select></label
-            >
+            <label>
+              search
+              <input
+                id="q"
+                type="search"
+                placeholder="e.g. honda city, alto..."
+              />
+            </label>
+
+            <label>
+              category
+              <select id="cat">
+                <option value="all">all categories</option>
+                <option>economy</option>
+                <option>sedan</option>
+                <option>suv</option>
+                <option>hatchback</option>
+              </select>
+            </label>
+
+            <label>
+              transmission
+              <select id="trans">
+                <option value="all">any transmission</option>
+                <option>automatic</option>
+                <option>manual</option>
+              </select>
+            </label>
+
+            <label>
+              daily budget
+              <select id="budget">
+                <option value="all">no budget limit</option>
+                <option value="3000">under ₨3,000</option>
+                <option value="5000">under ₨5,000</option>
+                <option value="8000">under ₨8,000</option>
+                <option value="15000">under ₨15,000</option>
+              </select>
+            </label>
+
+            <label>
+              sort by
+              <select id="sort">
+                <option value="default">default</option>
+                <option value="low">price: low to high</option>
+                <option value="high">price: high to low</option>
+              </select>
+            </label>
           </div>
+
           <p class="count" id="count" aria-live="polite"></p>
+
           <div class="grid" id="grid"></div>
+
           <div class="empty hidden" id="empty">
             <p>
-              Nothing came up for those filters. Try changing one or two and have another look.
+              couldn't find any cars matching these filters. try changing your
+              search or removing a filter.
             </p>
+
             <button class="btn line" id="reset" style="margin-top: 14px">
-              Reset filters
+              clear filters
             </button>
           </div>
         </div>
       </section>
+
       <section class="sec alt">
         <div class="wrap">
           <div class="head">
-            <div><h2>A few things to check before booking</h2></div>
+            <div>
+              <h2>before you choose a car</h2>
+              <p>a few things you might want to keep in mind.</p>
+            </div>
           </div>
+
           <div class="grid">
             <div class="card">
-              <h3>Seats and luggage</h3>
+              <h3>how many people are travelling?</h3>
               <p>
-                Travelling light? A smaller car should be fine for a couple of bags. For a bigger group, check the seats and luggage space before booking.
+                if you're travelling with a few people, check the seating
+                capacity before choosing. also think about luggage space,
+                especially if you're going on a longer trip.
               </p>
             </div>
+
             <div class="card">
-              <h3>Automatic or manual</h3>
+              <h3>manual or automatic?</h3>
               <p>
-                An automatic can be more relaxed in Karachi traffic. A manual usually costs a little less per day.
+                if you usually drive in karachi traffic, an automatic might be
+                more comfortable. manual cars are also available if that's what
+                you prefer.
               </p>
             </div>
+
             <div class="card">
-              <h3>Petrol or diesel</h3>
+              <h3>don't forget the fuel type</h3>
               <p>
-                Most of the cars here use petrol. The Fortuner is diesel, so keep that in mind when comparing running costs.
+                most cars in our collection run on petrol, while the fortuner
+                uses diesel. it's worth checking this before making your choice.
               </p>
             </div>
           </div>
         </div>
       </section>
     </main>
+
     <footer id="footer"></footer>
+
     <script src="js/data.js"></script>
     <script src="js/layout.js"></script>
     <script src="js/cars.js"></script>

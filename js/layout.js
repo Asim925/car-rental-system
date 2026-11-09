@@ -1,4 +1,3 @@
-// Shared header, footer, toast and helpers
 const $ = (id) => document.getElementById(id);
 const fmt = (n) => "₨" + n.toLocaleString("en-US");
 const P = new URLSearchParams(location.search);
@@ -26,7 +25,7 @@ $("footer").className = "ft";
 $("footer").innerHTML = `<div class="wrap"><div class="grid">
   <div><h3>DriveEase</h3><p>Car rental made simple: compare vehicles, check the full price, and send one request.</p></div>
   <div><h3>Pages</h3>${PAGES.map(([p, l]) => `<a href="${p}.html">${l}</a>`).join("")}</div>
-  <div><h3>Contact</h3><a href="mailto:support@driveease.pk">support@driveease.pk</a><a href="tel:+923001234567">+92 300 1234567</a><p>Karachi, Pakistan<br>Mon–Sun, 9 AM – 9 PM</p></div></div>
+  <div><h3>Contact</h3><a href="mailto:support@driveease.pk">support@driveease.pk</a><a href="tel:+923001234567">+92 300 1234567</a><p>Karachi, PakistanMon--Sun, 9am to 9pm</p></div></div>
   <div class="copy">© 2026 DriveEase · Team: Waleed, Abdullah, Hammad, Asim · ICT academic project</div></div>`;
 
 const toastEl = document.createElement("div");
