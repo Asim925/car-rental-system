@@ -15,6 +15,12 @@ const FEATURES = {
     "Bluetooth / USB audio",
     "Rear parking sensors",
   ],
+  Hatchback: [
+    "Air conditioning",
+    "Easy city parking",
+    "Foldable rear seats",
+    "Bluetooth / USB audio",
+  ],
   SUV: [
     "Dual-zone climate control",
     "High ground clearance",
@@ -33,6 +39,7 @@ const FEATURES = {
 const LUGGAGE = {
   Economy: "1-2 bags",
   Sedan: "3 bags",
+  Hatchback: "2-3 bags",
   SUV: "4+ bags",
   Luxury: "3 bags",
 };
@@ -45,7 +52,7 @@ const CARS = [
     seats: 4,
     trans: "Manual",
     fuel: "Petrol",
-    img: U("photo-1549317661-bd32c8ce0db2"),
+    img: "https://autos.hamariweb.com/images/carimages/car_216_638691154216450718.jpg",
     desc: "A budget-friendly option for daily travel, short trips, and getting around the city.",
   },
   {
@@ -56,7 +63,7 @@ const CARS = [
     seats: 5,
     trans: "Manual",
     fuel: "Petrol",
-    img: U("photo-1623869675781-80aa31012a5a"),
+    img: "https://media.ed.edmunds-media.com/toyota/corolla-hatchback/2021/oem/2021_toyota_corolla-hatchback_4dr-hatchback_se-nightshade-edition_fq_oem_1_1600.jpg",
     desc: "A comfortable and reliable car, perfect for family trips and everyday journeys.",
   },
   {
@@ -67,7 +74,7 @@ const CARS = [
     seats: 5,
     trans: "Manual",
     fuel: "Petrol",
-    img: U("photo-1583121274602-3e282f7ba1b5"),
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfap9z8LcLtOcVD6DpLMMKX6hXprZAX3btsKl33IbixbCP1RphlR5DqQc&s=10",
     desc: "A practical sedan with a comfortable interior and plenty of room for passengers.",
   },
   {
@@ -78,7 +85,7 @@ const CARS = [
     seats: 5,
     trans: "Manual",
     fuel: "Petrol",
-    img: U("photo-1494976388531-d1058494cdd8"),
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTPyKNby5O5N-Mt70rOj_t_5J-oH5OPRjIeaRJGvmHxZC81VjvafI6nyM&s=10",
     desc: "Easy to drive and economical, making it a great choice for everyday use.",
   },
   {
@@ -89,7 +96,7 @@ const CARS = [
     seats: 7,
     trans: "Automatic",
     fuel: "Petrol",
-    img: U("photo-1533473359331-0135ef1b58bf"),
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkxmAAPWK2jVGa-v-E0RD9S6095Ftx-NptjBGUOqYCbA&s=10",
     desc: "A spacious 7-seater for family outings and trips with friends.",
   },
   {
@@ -100,7 +107,7 @@ const CARS = [
     seats: 5,
     trans: "Manual",
     fuel: "Petrol",
-    img: U("photo-1552519507-da3b142c6e3d"),
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-Ue5llWU9RtZQ2Ls61_R5vGLGsideGZsgRAeWa3ACbhXc_4lv0GTJNw&s=10",
     desc: "A roomy and affordable hatchback that works well for city travel.",
   },
   {
@@ -111,7 +118,7 @@ const CARS = [
     seats: 5,
     trans: "Automatic",
     fuel: "Petrol",
-    img: U("photo-1617531653332-bd46c24f2068"),
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNlE8cYf7Gygh-4oRvhdz8-QfPUpCv1lK_HkO2GHosYNtcjlKXPb5ad7Y&s=10",
     desc: "A smooth and comfortable ride for daily commutes and longer drives.",
   },
   {
@@ -122,7 +129,7 @@ const CARS = [
     seats: 5,
     trans: "Manual",
     fuel: "Petrol",
-    img: U("photo-1503376780353-7e6692767b70"),
+    img: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Suzuki_Swift_%282024%29_hybrid_DSC_7922.jpg/1280px-Suzuki_Swift_%282024%29_hybrid_DSC_7922.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
     desc: "A compact hatchback that's fun to drive and convenient for city journeys.",
   },
   {
@@ -133,7 +140,7 @@ const CARS = [
     seats: 5,
     trans: "Automatic",
     fuel: "Petrol",
-    img: U("photo-1553440569-bcc63803a83d"),
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI61g2PPqEmPQq039GtvenKXEDQBZ-gRJ-kx77S438Qm0ew1HRM6xHFCfW&s=10",
     desc: "A small automatic car that's easy to handle and ideal for busy city roads.",
   },
   {
@@ -144,7 +151,7 @@ const CARS = [
     seats: 4,
     trans: "Automatic",
     fuel: "Petrol",
-    img: U("photo-1544636331-e26879cd4d9b"),
+    img: "https://upload.wikimedia.org/wikipedia/commons/d/dd/7th_generation_Daihatsu_Mira_01.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
     desc: "A fuel-efficient automatic car for convenient and affordable daily travel.",
   },
   {
@@ -155,7 +162,7 @@ const CARS = [
     seats: 7,
     trans: "Automatic",
     fuel: "Diesel",
-    img: U("photo-1519641471654-76ce0107ad1b"),
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz4yOZbhd9RnaVuLsQcyf3l4n4HTZpglizd9Vrbc7fbQ&s",
     desc: "A spacious SUV with plenty of room for family trips and long-distance travel.",
   },
   {
@@ -166,7 +173,7 @@ const CARS = [
     seats: 5,
     trans: "Automatic",
     fuel: "Petrol",
-    img: U("photo-1606611013016-969c19ba27bb"),
+    img: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Honda_Civic_e-HEV_Sport_%28XI%29_%E2%80%93_f_30062024.jpg/1280px-Honda_Civic_e-HEV_Sport_%28XI%29_%E2%80%93_f_30062024.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
     desc: "A comfortable sedan with a premium feel, ideal for business trips and special occasions.",
   },
 ];
